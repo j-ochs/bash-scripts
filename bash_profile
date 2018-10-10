@@ -19,6 +19,8 @@ alias hs='history | grep $1'
 alias f='open -a Finder ./'
 alias numFiles='echo $(ls -1 | wc -l)'
 alias cdg='cd ~/git/'
+alias eb='vim ~/.bash_profile'
+alias sbp='source ~/.bash_profile'
 
 ##### GIT ALIASES #####
 alias status='git status'
@@ -27,6 +29,7 @@ alias branch='git branch'
 alias fetch='git fetch'
 alias stats='git diff --stat'
 alias co='git checkout'
+alias grbm='git rebase -i origin/master'
 
 ##### FUNCTIONS ######
 # Recursive search for filename from current location
