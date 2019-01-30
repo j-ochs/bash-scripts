@@ -29,12 +29,13 @@ alias cdjw='cd ~/git/jiveweb/'
 alias cdg='cd ~/git/'
 alias jw='npm run start'
 alias jd='yarn start'
+alias vsc='code .'
 
 #######################
 ##### GIT ALIASES #####
 #######################
 alias ga='alias | grep git'
-alias s='git status && git status -s'
+alias s='git status && git diff --stat'
 alias status='git status'
 alias diff='git diff'
 alias branch='git branch'
@@ -49,6 +50,8 @@ alias grbm='git rebase -i origin/master'
 alias remote='git remote -v'
 alias gg="git log --graph --pretty=format:'%C(bold)%h%Creset%C(magenta)%d%Creset %s %C(yellow)<%an> %C(cyan)(%cr)%Creset' --abbrev-commit --date=relative"
 alias pull='git pull'
+alias add='git add .'
+alias amend='git commit --amend --no-edit --date=1.seconds.ago'
 
 #####################
 ##### FUNCTIONS #####
