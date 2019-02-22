@@ -52,6 +52,9 @@ alias gg="git log --graph --pretty=format:'%C(bold)%h%Creset%C(magenta)%d%Creset
 alias pull='git pull'
 alias add='git add .'
 alias amend='git commit --amend --no-edit --date=1.seconds.ago'
+# force-push to origin/<currentBranch>
+current_git_branch=$(git rev-parse --abbrev-ref HEAD)
+alias gfpo='git push -f origin $current_git_branch'
 
 #####################
 ##### FUNCTIONS #####
@@ -79,3 +82,6 @@ if [ -f ~/.git-completion.bash ]; then
         __git_complete co _git_checkout
 fi
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
