@@ -69,6 +69,12 @@ fbe() {
         find . -name "*.$1"
 }
 
+# print the current git branch name
+printCurrentBranch() { git rev-parse --abbrev-ref HEAD; }
+
+# open the current branch in Github
+githubOpen() { open "https://github.com/<OWNER>/<REPO>/compare/$(printCurrentBranch)"; }
+
 # Display git branch
 parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
