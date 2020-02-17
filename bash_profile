@@ -24,11 +24,7 @@ alias reset="osascript -e 'if application \"Terminal\" is frontmost then tell ap
 alias hs='history | grep $1'
 alias f='open -a Finder ./'
 alias numFiles='echo $(ls -1 | wc -l)'
-alias cdjd='cd ~/git/jive-desktop/'
-alias cdjw='cd ~/git/jiveweb/'
 alias cdg='cd ~/git/'
-alias jw='npm run start'
-alias jd='yarn start'
 alias vsc='code .'
 
 #######################
@@ -79,6 +75,7 @@ githubOpen() { open "https://github.com/<OWNER>/<REPO>/compare/$(printCurrentBra
 parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+
 # Add display of current git branch to the command line
 export PS1="[\u@\[\033[36m\]\h\[\033[33m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]]\$ "
 # Add git autocompletion
