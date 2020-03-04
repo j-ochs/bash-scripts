@@ -50,7 +50,7 @@ alias add='git add .'
 alias amend='git commit --amend --no-edit --date=1.seconds.ago'
 # force-push to origin/<currentBranch>
 current_git_branch=$(git rev-parse --abbrev-ref HEAD)
-alias gfpo='git push -f origin $current_git_branch'
+alias gfpo='git push --force-with-lease origin $current_git_branch'
 
 #####################
 ##### FUNCTIONS #####
