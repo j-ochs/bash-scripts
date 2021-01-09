@@ -65,11 +65,19 @@ fbe() {
         find . -name "*.$1"
 }
 
+# Kill process running on port
+killPort() {
+        kill -9 `lsof -i tcp:$1 | tail -n +2 | awk '{print $2}'`
+}
+
+# prints the current working git repo name
+gitRepo() { basename `git rev-parse --show-toplevel`; }
+
 # print the current git branch name
-printCurrentBranch() { git rev-parse --abbrev-ref HEAD; }
+gitBranch() { git rev-parse --abbrev-ref HEAD; }
 
 # open the current branch in Github
-githubOpen() { open "https://github.com/<OWNER>/<REPO>/compare/$(printCurrentBranch)"; }
+github() { open "https://github.com/searchableai/$(gitRepo)/compare/$(gitBranch)"; }
 
 # Display git branch
 parse_git_branch() {
